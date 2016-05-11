@@ -1,0 +1,12 @@
+<% if @seances.size > 0 %>
+	<% @seances.each do |seance| %>
+	 <%= link_to seance do %>
+			<p><%= seance.title %></p>
+		<% end %>
+	<% end %>
+<% else %>
+	Oh Damn ! Il n'y a pas encore d'annonce
+<% end %>
+
+<p><%= link_to 'Retour à la page d\'accueil', root_path %></p>
+
