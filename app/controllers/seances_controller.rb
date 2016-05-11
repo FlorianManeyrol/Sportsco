@@ -1,16 +1,16 @@
 class SeancesController < ApplicationController
 	skip_before_action :authenticate_user!, only: :index
-	before_action :find_seance, only: [:show, :edit, :update, :destroy]
+	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@seances = seance.all
+		@seances = Seance.all
 	end
 
 	def show
 	end
 
 	def create
-		@seance = seance.new(seance_params)
+		@seance = Seance.new(seance_params)
 		@seance.user = current_user
 		if @seance.save
 			redirect_to @seance
@@ -20,7 +20,7 @@ class SeancesController < ApplicationController
 	end
 
 	def new
-		@seance = seance.new
+		@seance = Seance.new
 	end
 
 	def edit
@@ -45,7 +45,7 @@ class SeancesController < ApplicationController
   end
 
   def set_seance
-  	@seance = seance.find(params[:id])
+  	@seance = Seance.find(params[:id])
   end
 
 end
