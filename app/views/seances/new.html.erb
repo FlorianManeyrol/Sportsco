@@ -1,4 +1,41 @@
 <%= simple_form_for @seance do |f| %>
-  <%= f.input :title, required: true %>
-  <%= f.button :submit %>
+<%= f.input :title, required: true %>
+<%= f.input :description, required: true %>
+<%= f.input :number_of_people, required: true %>
+<div class="input-group date" id='datetimepicker'>
+<%= f.input :start_at, label: false, as: :string, placeholder: 'Choisissez une date' %>
+	<span class="input-group-addon">
+		<span class="fa fa-calendar"></span>
+	</span>
+</div>
+<div class="input-group date" id='datetimepickertime'>
+<%= f.input :created_at, label: false, as: :string, placeholder: 'Choisissez une heure' %>
+	<span class="input-group-addon">
+		<span class="fa fa-clock-o"></span>
+	</span>
+</div>
+<%= f.button :submit %>
 <% end %>
+
+
+
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+  </div> -->
