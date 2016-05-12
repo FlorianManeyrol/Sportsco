@@ -42,19 +42,5 @@ $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 93.5%); // #eee
 
-// Global
-body, html {
-	height:100%; 
-	margin:0;
-}
-
-a {
-	color: #3E75C6;
-}
-
-a:hover, a:focus {
-	color: #3E75C6;
-}
-
 
 
