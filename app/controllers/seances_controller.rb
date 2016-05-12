@@ -21,6 +21,8 @@ class SeancesController < ApplicationController
 
 	def new
 		@seance = Seance.new
+		@regions = Seance::REGIONS
+		@departements = Seance::DEPARTEMENTS
 	end
 
 	def edit
@@ -41,7 +43,7 @@ class SeancesController < ApplicationController
 	private
 
 	def seance_params
-    params.require(:seance).permit(:title)
+    params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement)
   end
 
   def set_seance
