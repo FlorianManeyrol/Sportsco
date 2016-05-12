@@ -21,6 +21,8 @@ class SeancesController < ApplicationController
 
 	def new
 		@seance = Seance.new
+		@regions = Seance::REGIONS
+		@departements = Seance::DEPARTEMENTS
 	end
 
 	def edit
