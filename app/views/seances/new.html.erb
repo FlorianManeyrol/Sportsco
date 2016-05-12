@@ -1,6 +1,5 @@
 <%= simple_form_for @seance do |f| %>
-<p><%= f.input :departement, collection: @sports, prompt: 'Choisissez un Sport', label: false%></p>
-
+<%= f.association :sport, prompt: 'Choisissez un sport' %>
 <%= f.input :title, required: true %>
 <%= f.input :description, required: true %>
 <%= f.input :number_of_people, required: true %>
@@ -20,7 +19,6 @@
 <h4>Localisation</h4>
 <p><%= f.input :region, collection: @regions, prompt: 'Choisissez une Région', label: false%></p>
 <p><%= f.input :departement, collection: @departements, prompt: 'Choisissez un Département', label: false%></p>
-
 
 <%= f.button :submit %>
 <% end %>

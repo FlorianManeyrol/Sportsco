@@ -5,3 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+sports = [
+	{name: "Football"},
+	{name: "Rugby"},
+	{name: "Velo"},
+	{name: "Surf"},
+	{name: "Course à pied"},
+	{name: "Tennis"},
+	{name: "Ping-pong"},
+]
+
+sports.each do |sport|
+  s = Sport.new(
+    sport
+  )
+  s.save
+end
+
+puts "Seed done"

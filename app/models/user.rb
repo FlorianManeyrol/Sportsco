@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :seances, dependent: :destroy
+  has_many :sports, :through => :seances
 end
