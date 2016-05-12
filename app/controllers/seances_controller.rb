@@ -20,6 +20,7 @@ class SeancesController < ApplicationController
 	end
 
 	def new
+    # @sports = Sport.all.map{ |u| [ u.name, u.id ] }
 		@seance = Seance.new
 		@regions = Seance::REGIONS
 		@departements = Seance::DEPARTEMENTS
@@ -38,12 +39,13 @@ class SeancesController < ApplicationController
 
 	def destroy
 		@seance.destroy
+		redirect_to seances_path
 	end
 
 	private
 
 	def seance_params
-    params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement)
+    params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement, :sport_id)
   end
 
   def set_seance

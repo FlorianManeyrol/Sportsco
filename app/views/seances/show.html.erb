@@ -1,6 +1,7 @@
 show.html.erb
 
 <%= @seance.title %>
+<%= @seance.sport.name %>
 
 <h3><%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
 <%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,

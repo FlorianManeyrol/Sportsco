@@ -1,5 +1,6 @@
 class Seance < ActiveRecord::Base
   belongs_to :user
+  belongs_to :sport
 
   validates :title, presence: true, uniqueness: true, length: { in: 1..50 }
 
