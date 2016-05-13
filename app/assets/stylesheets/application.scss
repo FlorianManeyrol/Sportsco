@@ -14,6 +14,20 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+@import "devise";
 
 
+// Global
+body, html {
+	height:100%; 
+	margin:0;
+}
+
+a {
+	color: #3E75C6;
+}
+
+a:hover, a:focus {
+	color: #3E75C6;
+}
 
