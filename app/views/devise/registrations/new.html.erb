@@ -1,17 +1,34 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+<div class="background-img-signup">
+	<div class="filter-hard-black flex-container">
+		<div class="bg-white">
+			<h2 class="text-center">Inscription</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+
+			<div class="form-inputs">
+				<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+				<%= f.input :first_name, label: false, placeholder: 'Prénom' %>
+				<%= f.input :last_name, label: false, placeholder: 'Nom' %>
+				<%= f.input :email, label: false, autofocus: true, placeholder: 'Adresse e-mail' %>
+				<%= f.input :password, label: false, placeholder: 'Mot de passe' , hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length) %>
+<!-- 				<%= f.input :password_confirmation, required: true %>
+-->		<%= f.input :birth, label: false, placeholder: 'Age', input_html: { min: '1', max: '120' }%>
+	
+	<%= f.input :sex, as: :radio_buttons, collection: [ "Homme", "Femme"], label: false, item_wrapper_class: 'inline' %>
+
+
+
+
+</div>
+
+<div class="form-actions">
+	<%= f.button :submit, "Sign up" %>
+</div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>
