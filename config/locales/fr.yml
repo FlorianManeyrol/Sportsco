@@ -1,2 +1,20 @@
 fr:
   hello: "Bonjour"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            birth:
+              blank: "Sélectionnez votre date de naissance pour continuer."
+            first_name:
+              blank: "Un prénom est obligatoire."
+            last_name:
+              blank: "Un nom est obligatoire."
+            password: 
+              blank: "Un mot de passe est obligatoire."
+            email:
+              blank: "Une adresse e-mail est obligatoire."
+              taken: "Cette adresse e-mail est déja utilisée"
+            sex:
+              blank: "Précisez votre sexe pour continuer."

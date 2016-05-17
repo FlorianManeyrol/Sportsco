@@ -17,12 +17,16 @@
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Profile picture and dropdown -->
+			<div class="profil-name">
+      <%= current_user.first_name.capitalize %>
+      </div>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-user"></i> Mon profil
               <% end %>
             </li>
@@ -43,7 +47,7 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to "Recherche de partenaires", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link" %>
