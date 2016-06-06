@@ -2,25 +2,33 @@
 meta title: "Sportsco. 1er réseau social du sport en France"
 %>
 <% content_for :navbar do %>
-  <%= render 'navbarone' %>
+<%= render 'navbarone' %>
 <% end %>
 
-<div class="jumbo flex-container">
-		<div class="background-title flex-item text-center">
-			<h1>1er réseau social du sport en France</h1>
-			<h2>Recherche des partenaires ou propose ton sport.</h2>
+<div class="jumbo">
+	<div class="accroche text-center">
+		<h1>1er réseau social du sport en France</h1>
+		<h2>Recherche des partenaires ou propose ton sport.</h2>
+	</div>
+	<div class="searchbar">
+		<div class="container">
+			<div class="row">
+				<div class="searchbar-content">
+					<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
+
+					<%= f.input :departement, placeholder: 'Entrez un departement', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %><%= f.input :start_at, collection: @distances, prompt: 'Distance', label: false, wrapper_html: { class: "searchbar-select search-distance" , :size => 15} %><%= f.input :end_at, collection: @distances, prompt: 'Distance', label: false, wrapper_html: { class: "searchbar-select search-distance" } %><%= f.input :sport, collection: @sports, prompt: 'Choisissez un sport', label: false, wrapper_html: { class: "searchbar-select search-sport" } %><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
+					<% end %>
+				</div>
+			</div>
 		</div>
-		<div class="search">
-			ICI CEST LA SEARCH GROS
-		</div>
+
+
 	</div>
 </div>
+</div>
 
-<div class="sports">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint numquam ipsam ipsum adipisci nesciunt nemo, aperiam laborum natus, neque, explicabo magnam consequuntur quisquam odit sunt nobis tenetur eum voluptatibus, possimus!S
+<div class="sports text-center">
+	<h3>Recherchez des partenaires partout en France</h3>
+	<p>Trouver des partenaires parmis nos annonces en fonction du créneau horaire dont vous disposez </p>
+	<p>Choisissez le sport que vous souhaitez pratiquez et trouvez des partenaires disponible. Fini les excuses !</p>
 </div>

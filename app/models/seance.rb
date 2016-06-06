@@ -2,6 +2,9 @@ class Seance < ActiveRecord::Base
   belongs_to :user
   belongs_to :sport
 
+  include PgSearch
+  pg_search_scope :search_by_title, :against => :title
+
   validates :title, presence: true, uniqueness: true, length: { in: 1..50 }
 
  	REGIONS = {
