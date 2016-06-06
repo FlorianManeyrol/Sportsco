@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	$('#datetimepicker').datetimepicker({
+		allowInputToggle: true,
 		format: 'DD.MM.YYYY',
 		minDate: 'now',
 		stepping: 15

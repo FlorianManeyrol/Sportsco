@@ -11,6 +11,9 @@
 	background-size: cover;
 	background-position: 100% 70%;
 	color: white;
+	.bootstrap-datetimepicker-widget {
+		color:#333333;
+	} 
 }
 
 .accroche {
@@ -42,4 +45,84 @@
 
 	}
 }
+
+.searchbar-select {
+	position: relative;
+	&:before {
+		content: '\25bc';
+		position: absolute;
+		pointer-events: none;
+		color: #82888a;
+		line-height: 1;
+		right:0;
+		width: 2em;
+		text-align: center;
+		transform: scale(0.70, 0.42);
+		-webkit-transform: scale(0.70, 0.42);
+		top: 50%;
+		margin-top: -7px;
+	}
+}
+
+.searchbar-select select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin:-1px;
+	padding-right:32px;
+}
+
+.search-sport {
+	height: 44px;
+	border-radius: 3px 0px 0px 3px;
+	font-weight: 100;
+	color: #95989A;
+}
+
+.search-departement {
+	height:44px;
+	border-radius:0px;
+	font-weight: 100;
+	color: #95989A;
+	margin-left: -3px;
+}
+
+.search-date {
+	height: 44px;
+	border-radius: 0;
+	font-weight: 100;
+	color: #95989A;
+	margin-left: -5px;
+
+}
+
+.btn-search {
+	height: 44px;
+	border-radius: 0px 3px 3px 0px;
+	&:hover, &:focus {
+		color:white;
+		background-color: rgba(#3E75C6, 0.8);
+	}
+}
+
+.input-group.date .input-group-addon {
+	background-color: white;
+	border-radius:0px;
+}
+
+.searchbar-content {
+	.search_start_at {
+		position: relative;
+	}
+	.input-group {
+		#span1 {
+			position: absolute;
+			right: 15px;
+			top: 14px;
+			z-index: 3;
+			color: #95989A;
+		}
+	}
+}
+
 

@@ -11,20 +11,21 @@ meta title: "Sportsco. 1er réseau social du sport en France"
 		<h2>Recherche des partenaires ou propose ton sport.</h2>
 	</div>
 	<div class="searchbar">
-		<div class="container">
-			<div class="row">
-				<div class="searchbar-content">
-					<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
+		<div class="row">
+			<div class="searchbar-content">
+				<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %><%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport'}%>
+				<%= f.input :departement, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
+				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
+				<span id="span1" class="fa fa-calendar"></span></div><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
 
-					<%= f.input :departement, placeholder: 'Entrez un departement', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %><%= f.input :start_at, collection: @distances, prompt: 'Distance', label: false, wrapper_html: { class: "searchbar-select search-distance" , :size => 15} %><%= f.input :end_at, collection: @distances, prompt: 'Distance', label: false, wrapper_html: { class: "searchbar-select search-distance" } %><%= f.input :sport, collection: @sports, prompt: 'Choisissez un sport', label: false, wrapper_html: { class: "searchbar-select search-sport" } %><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
+
 					<% end %>
 				</div>
 			</div>
+
+
 		</div>
-
-
 	</div>
-</div>
 </div>
 
 <div class="sports text-center">
