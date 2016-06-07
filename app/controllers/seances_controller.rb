@@ -4,6 +4,7 @@ class SeancesController < ApplicationController
 
 	def index
 		@seances = Seance.all
+			
 	end
 
 	def show

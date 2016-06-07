@@ -25,5 +25,15 @@ class PagesController < ApplicationController
 			" Tennis de table" => "Tennis de table",
 			" Badminton "      => " Badminton ",
 		}
+
+		@seances = Seance.all
+
+		if params[:search]
+			if params[:search][:address].present?
+				@address = params[:search][:address]
+				@seances = @seances.near(params[:search][:address]).page(params[:page]).per(10)
+			end
+
+		end
 	end
 end
