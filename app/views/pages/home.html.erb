@@ -15,7 +15,7 @@ meta title: "Sportsco. 1er réseau social du sport en France"
 			<div class="searchbar-content">
 				<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
 				<%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport'}%>
-				<%= f.input :departement, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
+				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
 				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
 				<span id="span1" class="fa fa-calendar"></span></div><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
 				<% end %>
