@@ -3,8 +3,13 @@ class SeancesController < ApplicationController
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@seances = Seance.all
-			
+		
+		if params[:search][:sport].present?
+			sport = Sport.find(params[:search][:sport])
+			@seances = Seance.where(sport: sport)
+		else
+			@seances = Seance.all
+		end
 	end
 
 	def show
