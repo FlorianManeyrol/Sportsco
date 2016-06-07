@@ -125,4 +125,23 @@
 	}
 }
 
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+    background-image: none !important;
+    height: 0px;
+}
+
+.pac-icon {
+	display:none !important;
+}
+
+.pac-item {
+	padding: 8px;
+	&-query {
+		font-size:15px;
+		font-family:Lato;
+	}
+}
+
 
