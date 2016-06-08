@@ -17,8 +17,7 @@
 </div>
 <%= f.input :girl_only, as: :boolean, required: true %>
 <h4>Localisation</h4>
-<p><%= f.input :region, collection: @regions, prompt: 'Choisissez une Région', label: false%></p>
-<p><%= f.input :departement, collection: @departements, prompt: 'Choisissez un Département', label: false%></p>
+<p><%= f.input :address, prompt: 'Entrer votre adresse', label: false%></p>
 <%= f.button :submit %>
 <% end %>
 

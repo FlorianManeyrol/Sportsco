@@ -1,7 +1,7 @@
 <% if @seances.size > 0 %>
 	<% @seances.each do |seance| %>
 	 <%= link_to seance do %>
-			<p><%= seance.title %><%= seance.created_at %></p>
+			<p><%= seance.title %><%= seance.created_at %><%= seance.address %></p>
 		<% end %>
 	<% end %>
 <% else %>

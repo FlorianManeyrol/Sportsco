@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'metamagic'
 gem 'kaminari'
+gem 'geocoder'
 
 gem 'sass-rails'
 gem 'jquery-rails'

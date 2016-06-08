@@ -2,6 +2,9 @@ class Seance < ActiveRecord::Base
   belongs_to :user
   belongs_to :sport
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   # include PgSearch
   # pg_search_scope :search_by_title, :against => :title
 

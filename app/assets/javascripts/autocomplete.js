@@ -24,4 +24,5 @@ function onPlaceChanged() {
 
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('search_address');
+  initializeAutocomplete('seance_address');
 });

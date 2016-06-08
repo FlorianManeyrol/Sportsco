@@ -3,12 +3,15 @@ class SeancesController < ApplicationController
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def index
-		
-		if params[:search][:sport].present?
-			sport = Sport.find(params[:search][:sport])
-			@seances = Seance.where(sport: sport)
-		else
-			@seances = Seance.all
+		if params[:search]
+			if params[:search][:sport].present? 
+				sport = Sport.find(params[:search][:sport])
+				@seances = Seance.where(sport: sport)
+			elsif params[:search][:address].present?
+				@seances = Seance.near(params[:search][:address], 10)
+			else
+				@seances = Seance.all
+			end
 		end
 	end
 
@@ -51,7 +54,7 @@ class SeancesController < ApplicationController
   private
 
   def seance_params
-  	params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement, :sport_id)
+  	params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement, :sport_id, :address)
   end
 
   def set_seance
