@@ -18,5 +18,9 @@
 .navbar-wagon-link-one {
   color: white;
   font-size: 15px;
+  &:hover {
+  	color:#F3F3F3; 
+  	text-decoration:none !important;
+  }
 }
 

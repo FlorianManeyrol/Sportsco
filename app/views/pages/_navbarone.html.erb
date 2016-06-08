@@ -1,5 +1,4 @@
-<div class="navbar-wagon-one">
-  <!-- Logo -->
+<div class="navbar-wagon-one"> 
   <%= link_to root_path, class: "navbar-wagon-brand-one" do %>
     <%= image_tag "logo-white.png" %>
   <% end %>
@@ -11,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Login text link -->
-      <%= link_to "Recherche de partenaires", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
+      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
       <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
