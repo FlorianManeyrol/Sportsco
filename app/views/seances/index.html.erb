@@ -1,12 +1,42 @@
-<% if @seances.size > 0 %>
-	<% @seances.each do |seance| %>
-	 <%= link_to seance do %>
-			<p><%= seance.title %><%= seance.created_at %><%= seance.address %></p>
+<div class="bg-grey">
+	<div class="searchbar">
+		<div class="row">
+			<div class="searchbar-content">
+				<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
+				<%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport'}%>
+				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
+				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
+				<span id="span1" class="fa fa-calendar"></span></div><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<% if @seances.size > 0 %>
+			<% @seances.each do |seance| %>
+				<%= link_to seance do %>
+					<div class="seance-card">
+						<div class="row">
+							<div class="col-md-3">
+								IMAGE DE OUF
+							</div>
+							<div class="col-md-6">
+								<div class="seance-card-title">
+									<%= seance.title %>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="seance-card-description">
+									<p><%= seance.created_at %></p>
+									<p><%= seance.address %></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		<% else %>
+			Oh Damn ! Il n'y a pas encore d'annonce
 		<% end %>
-	<% end %>
-<% else %>
-	Oh Damn ! Il n'y a pas encore d'annonce
-<% end %>
-
-<p><%= link_to 'Retour à la page d\'accueil', root_path %></p>
-
+	</div>
+</div>

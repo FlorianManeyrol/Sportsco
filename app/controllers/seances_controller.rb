@@ -3,12 +3,17 @@ class SeancesController < ApplicationController
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def index
+
+		@seances = Seance.all
 		if params[:search]
 			if params[:search][:sport].present? 
 				sport = Sport.find(params[:search][:sport])
 				@seances = Seance.where(sport: sport)
 			elsif params[:search][:address].present?
 				@seances = Seance.near(params[:search][:address], 10)
+			elsif params[:search][:start_at].present?
+				start_at = Date.parse(params[:search][:start_at])
+				@seances = Seance.where(start_at: start_at)
 			else
 				@seances = Seance.all
 			end
