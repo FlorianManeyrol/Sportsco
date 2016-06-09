@@ -17,17 +17,20 @@
 				<%= link_to seance do %>
 					<div class="seance-card">
 						<div class="row">
-							<div class="col-md-3">
-								IMAGE DE OUF
+							<div class="col-sm-3">
+								<%= cl_image_tag seance.sport.photo, crop: :fill, class: 'media-object img-responsive' %>
 							</div>
-							<div class="col-md-6">
+							<div class="col-sm-6">
 								<div class="seance-card-title">
 									<%= seance.title %>
 								</div>
-							</div>
-							<div class="col-md-3">
 								<div class="seance-card-description">
-									<p><%= seance.created_at %></p>
+									<%= seance.description %>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="seance-card-description">
+									<p><%= seance.created_at.strftime("rdv le : %d/%m/%Y") %></p>
 									<p><%= seance.address %></p>
 								</div>
 							</div>

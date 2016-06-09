@@ -11,6 +11,8 @@ gem 'redis'
 gem 'metamagic'
 gem 'kaminari'
 gem 'geocoder'
+gem 'cloudinary'
+gem 'carrierwave'
 
 gem 'sass-rails'
 gem 'jquery-rails'

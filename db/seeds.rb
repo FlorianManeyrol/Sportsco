@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 sports = [
-	{name: "Football"},
+	{name: "Football", remote_photo_url: "http://res.cloudinary.com/sportsco/image/upload/v1465487451/photo-foot_jyjamt.jpg"},
 	{name: "Course à pied"},
 	{name: "Tennis"},
-	{name: "Vélo"},
+	{name: "Vélo", remote_photo_url: "http://res.cloudinary.com/sportsco/image/upload/v1465487455/photo-velo_roq6jb.jpg" },
 	{name: "Equitation"},
 	{name: "Judo"},
 	{name: "Basket"},

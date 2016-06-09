@@ -2,11 +2,9 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700,300'|Josefin+Sans:400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,300'|Roboto:400,700,900");
 $base-font: "Lato", "Helvetica", "sans-serif";
-$header-font: "Fatfrank", "Helvetica", "sans-serif";
-
-@font-face { font-family: Fatfrank; src: url('FatFrank-Free.otf'); } 
+$header-font: "Roboto", "Helvetica", "sans-serif";
 
 
 // Local fonts (uncomment following lines)
