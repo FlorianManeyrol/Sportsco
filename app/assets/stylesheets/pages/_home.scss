@@ -5,7 +5,7 @@
 
 
  .jumbo {
- 	background-image: image-url('jumbo-hd-sup.jpg');
+ 	background-image: image-url('jumb.jpg');
  	width:100%;
 	// min-height:calc(100vh - 70px);
 	background-size: cover;
@@ -18,6 +18,9 @@
 
 .accroche {
 	padding: 170px 0px;
+	h1 {
+		font-weight:900;
+	}
 	h2 {
 		font-family: lato;
 		font-size: 25px;
@@ -37,6 +40,7 @@
 		color:#3E75C6;
 		margin: 0px;
 		padding: 30px 10px;
+		font-weight:700;
 	}
 	p {
 		font-size: 18px;
