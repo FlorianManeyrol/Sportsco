@@ -13,6 +13,7 @@ gem 'kaminari'
 gem 'geocoder'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'searchkick'
 
 gem 'sass-rails'
 gem 'jquery-rails'

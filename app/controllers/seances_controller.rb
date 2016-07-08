@@ -2,6 +2,16 @@ class SeancesController < ApplicationController
 	skip_before_action :authenticate_user!, only: :index
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
+	def search
+		if params[:random_search]
+			if params[:random_search][:random].present?
+				@seances = Seance.search(params[:random_search][:random])
+			else
+				@seances = Seance.all
+			end
+		end
+	end
+
 	def index
 
 		@seances = Seance.all
@@ -12,7 +22,7 @@ class SeancesController < ApplicationController
 			elsif params[:search][:address].present?
 				@seances = Seance.near(params[:search][:address], 10)
 			elsif params[:search][:start_at].present?
-				start_at = Date.parse(params[:search][:start_at])
+				start_at = params[:search][:start_at].to_time.strftime("%d.%m.%Y")
 				@seances = Seance.where(start_at: start_at)
 			else
 				@seances = Seance.all
