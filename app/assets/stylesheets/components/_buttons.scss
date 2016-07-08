@@ -16,4 +16,14 @@
 	}
 }
 
+.btn-cta {
+	border: 1px solid;
+	border-radius: 3px;
+	padding: 6px 20px;
+	margin-right:20px;
+	&:hover {
+		background-color: rgba(#3E75C6, 0.2);
+	}
+}
+
 
