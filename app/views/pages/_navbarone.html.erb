@@ -10,8 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Login text link -->
-      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
-      <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
+      <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one btn-cta" %>
+<!--       <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
+ -->      
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
 
@@ -46,8 +47,9 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
-      <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
+      <%= link_to "Propose une séance", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one btn-cta" %>
+<!--       <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
+ -->      
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
 
