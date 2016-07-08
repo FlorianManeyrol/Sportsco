@@ -22,8 +22,8 @@ class SeancesController < ApplicationController
 			elsif params[:search][:address].present?
 				@seances = Seance.near(params[:search][:address], 10)
 			elsif params[:search][:start_at].present?
-				start_at = params[:search][:start_at].to_time.strftime("%d.%m.%Y")
-				@seances = Seance.where(start_at: start_at)
+			  start_at_parse = Date.parse(params[:search][:start_at]).strftime('%a, %d %b %Y %H:%M:%S %z')
+				@seances = Seance.where("start_at > ?", start_at_parse)
 			else
 				@seances = Seance.all
 			end
