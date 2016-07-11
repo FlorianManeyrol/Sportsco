@@ -1,5 +1,5 @@
 class SeancesController < ApplicationController
-	skip_before_action :authenticate_user!, only: :index
+	skip_before_action :authenticate_user!, only: [:index, :search]
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def search
@@ -13,20 +13,21 @@ class SeancesController < ApplicationController
 	end
 
 	def index
+	  @seances = Seance.all
 
-		@seances = Seance.all
 		if params[:search]
-			if params[:search][:sport].present? 
+
+			if params[:search][:sport].present?
 				sport = Sport.find(params[:search][:sport])
-				@seances = Seance.where(sport: sport)
-			elsif params[:search][:address].present?
-				@seances = Seance.near(params[:search][:address], 10)
-			elsif params[:search][:start_at].present?
-			  start_at_parse = Date.parse(params[:search][:start_at]).strftime('%a, %d %b %Y %H:%M:%S %z')
-				@seances = Seance.where("start_at > ?", start_at_parse)
-			else
-				@seances = Seance.all
+				@seances = @seances.where(sport: sport)
 			end
+			if params[:search][:address].present?
+				@seances = @seances.near(params[:search][:address], 10)
+			end
+			if params[:search][:start_at].present?
+			  start_at_parse = Date.parse(params[:search][:start_at]).strftime('%a, %d %b %Y %H:%M:%S %z')
+				@seances = @seances.where("start_at > ?", start_at_parse)
+			end		
 		end
 	end
 
