@@ -25,11 +25,11 @@
       				<%= current_user.first_name.capitalize %>
      				</div>
      				<div class="profil-picture avatar">
-     				<% if current_user.picture == nil %>
-     					<%= image_tag "default-avatar.svg" %>
-     				<% else %>
-     					<%= current_user.picture %>	
-     				<% end %>
+     				<% if current_user.picture.present? %>
+     					<%= cl_image_tag current_user.picture, :height => 30, :width => 30, :crop => :fill %>
+						<% else %>
+      				<%= image_tag 'default-avatar.svg' %>
+      			<% end %>
      				</div>
           </div>          
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">

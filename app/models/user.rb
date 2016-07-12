@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true
 	validates :birth, presence: true
 	validates :sex, presence: true
+
+	mount_uploader :picture, PictureUploader
+
 end

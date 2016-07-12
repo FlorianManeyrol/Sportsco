@@ -74,7 +74,9 @@
 			    <hr>
 			    <%= @seance.user.sex %>
 			    <hr>
-			    <%= @seance.user.picture %>
+			    <div class="avatar-grey">
+			    <%= cl_image_tag @seance.user.picture, :height => 50, :width => 50, :crop => :fill  %>
+			    </div>
 			    <hr>
 			    Sport(s) favoris :
 			    <hr>
