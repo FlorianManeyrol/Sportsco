@@ -22,3 +22,60 @@
 	}
 
 }
+
+/* Seance new */
+
+.seance-form {
+  &-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+  }
+  h3 {
+  	font-size: 32px;
+    color: #484848;
+    font-weight: bold;
+  }
+  p {
+		padding-bottom:40px;
+  }
+  .form-group {
+	margin-bottom: 40px;
+  }
+  label {
+	font-weight: normal;
+  color: #484848;
+  font-size: 22px;
+	}
+	.input-group {
+	width:100%;
+  }
+  .fa-calendar {
+  	position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 3;
+  }
+  .fa-map-marker {
+  	position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 3;
+  }
+
+  .step6 {
+  	position:relative;
+  }
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+
+
+
+
+
+
+

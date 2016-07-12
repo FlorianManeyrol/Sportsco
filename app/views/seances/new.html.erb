@@ -1,25 +1,66 @@
-<%= simple_form_for @seance do |f| %>
-<%= f.association :sport, prompt: 'Choisissez un sport' %>
-<%= f.input :title, required: true %>
-<%= f.input :description, required: true %>
-<%= f.input :number_of_people, required: true %>
-<div class="input-group date" id='datetimepicker'>
-<%= f.input :start_at, label: false, as: :string, placeholder: 'Choisissez une date' %>
-	<span class="input-group-addon">
-		<span class="fa fa-calendar"></span>
-	</span>
-</div>
+<div class="seance-form">
+	<div class="seance-form-container">
+		<div class="seance-form-title">
+			<h3> Propose ton sport</h3>
+			<p> Commencez par créer votre annonce. Dites-vous que c'est un <br> peu comme un profil, mais pour votre logement.</p>
+		</div>
+		<%= simple_form_for @seance do |f| %>
+		<div class="step1">
+			<%= f.association :sport, prompt: 'Choisissez un sport', label: '1. Quel sport souhaitez-vous proposer ?' %>
+		</div>
+
+<!-- 		<div class="btn btn-default endstep1">
+			Suivant
+		</div> -->
+
+		<div class="step2">
+			<%= f.input :title, required: true, label: '2. Choisissez un titre pour votre seance de sport'  %>
+		</div>
+		<div class="step2">
+			<%= f.input :description, as: :text,  :input_html => {:rows => 10}, required: true, label: '3. Décrivez le contenu de la seance'  %>
+		</div>
+<!-- 		<div class="btn btn-default endstep2">
+			Suivant
+		</div> -->
+		<div class="step3">
+			<%= f.input :number_of_people, as: :integer, input_html: { min: '1' }, required: true, label: '4. Combien de participants souhaitez-vous ?'  %>
+		</div>
+<!-- 		<div class="btn btn-default endstep3">
+			Suivant
+		</div> -->
+		<div class="step4">
+			<div class="input-group form-group date" id='datetimepicker'>
+				<%= f.input :start_at, label: false, as: :string, input_html: { class: 'input-group date', id: "datetimepicker" } ,placeholder: 'Choisissez une date', label: '5. A quel date souhaitez vous programmer la seance ?' %><span class="fa fa-calendar"></span>
+			</div>
+		</div>
+<!-- 		<div class="btn btn-default endstep4">
+			Suivant
+		</div> -->
 <!-- <div class="input-group date" id='datetimepickertime'>
 <%= f.input :created_at, label: false, as: :string, placeholder: 'Choisissez une heure' %>
 	<span class="input-group-addon">
 		<span class="fa fa-clock-o"></span>
 	</span>
 </div> -->
-<%= f.input :girl_only, as: :boolean, required: true %>
-<h4>Localisation</h4>
-<p><%= f.input :address, prompt: 'Entrer votre adresse', label: false%></p>
-<%= f.button :submit %>
-<% end %>
+
+<!-- <div class="btn btn-default endstep5">
+			Suivant
+		</div> -->
+		<div class="step6">
+			<%= f.input :address, prompt: 'Entrer votre adresse', label: '6. Indiquez le lieu de rendez-vous pour votre séance' %><span class="fa fa-map-marker"></span>
+		</div>
+
+		<div class="step5">
+			<%= f.input :girl_only, as: :boolean, required: true, label: 'Cochez la case si votre seance est uniquement réservé au femme'  %>
+		</div>
+
+		<div class="submit">
+			<%= f.submit "Créer la séance", class: 'btn btn-default' %>
+		</div>
+		<% end %>
+	</div>
+
+</div>
 
 
 
