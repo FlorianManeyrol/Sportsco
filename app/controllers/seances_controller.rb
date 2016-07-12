@@ -17,7 +17,7 @@ class SeancesController < ApplicationController
 			end
 			if params[:search][:start_at].present?
 			  start_at_parse = Date.parse(params[:search][:start_at]).strftime('%a, %d %b %Y %H:%M:%S %z')
-				@seances = @seances.where("start_at > ?", start_at_parse)
+				@seances = @seances.where("start_at >= ?", start_at_parse)
 			end		
 		end
 

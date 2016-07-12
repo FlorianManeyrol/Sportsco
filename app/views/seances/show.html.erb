@@ -1,9 +1,102 @@
-show.html.erb
+<div class="seance-description">
+	<div class="seance-description-container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="seance-description-title">
+					<h3><%= @seance.title.capitalize %></h3>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Description </h4>
+					</div>
+					<div class="col-md-5">
+						<%= @seance.description %>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Lieu de rencontre </h4>
+					</div>
+					<div class="col-md-5">
+						<%= @seance.address %>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Date </h4>
+					</div>
+					<div class="col-md-5">
+						<%= @seance.start_at.strftime("%d/%m/%Y")%>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Heure </h4>
+					</div>
+					<div class="col-md-5">
+						<%= @seance.start_at.strftime("%d/%m/%Y")%>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Place(s) disponible(s) </h4>
+					</div>
+					<div class="col-md-5">
+						<%= @seance.number_of_people %>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-3">
+						<h4> Fille(s) uniquement(s) </h4>
+					</div>
+					<div class="col-md-5">
+						<% if @seance.girl_only == true %>
+						Oui
+						<% else %>
+						Non
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+			  <div class="about-author">
+			    <div class="about-author-title">
+			    	<h3>A Propos de <strong><%= @seance.user.first_name %> <%= @seance.user.last_name[0].capitalize %></strong></h3>
+			    </div>
+			    <hr>
+			    <%= @seance.user.birth %> ans
+			    <hr>
+			    <%= @seance.user.sex %>
+			    <hr>
+			    <%= @seance.user.picture %>
+			    <hr>
+			    Sport(s) favoris :
+			    <hr>
+          niveau :
+			    <hr>
+			    inscrit depuis : 
+			    <%= @seance.user.created_at.strftime("%d/%m/%Y") %>
+			    <div class="btn btn-default btn-block">
+			    	Entrer en contact
+			    </div>
+			  </div>
+			</div>
+		</div>
 
-<%= @seance.title %>
-<%= @seance.sport.name %>
 
-<h3><%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
-<%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,
-      data: { confirm: "Are you sure?" }  %>
-</h3>
+<!-- 		<h3><%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
+			<%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,
+			data: { confirm: "Are you sure?" }  %>
+		</h3> -->
+	</div>
+</div>
+
+
+
+

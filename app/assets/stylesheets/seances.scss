@@ -72,8 +72,42 @@ abbr[title="required"] {
   display: none;
 }
 
+/* Seance show */
+
+.seance-description {
+	background-color: #F5F5F5;
+	font-family: Roboto;
+	&-container {
+		max-width: 1045px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	&-title {
+		color: #484848;
+		h3 {
+		  font-weight:bold;
+	  }
+	}
+	h4 {
+	  color: #757575;
+	  font-size: 15px;
+	  margin-top:0px;
+	}
+}
 
 
+.about-author {
+	background-color: white;
+	padding:20px;
+	border: 1px solid #DCE0E0;
+	color: #484848;
+	&-title {
+		h3 {
+		  font-weight:bold;
+		}
+	}
+
+}
 
 
 

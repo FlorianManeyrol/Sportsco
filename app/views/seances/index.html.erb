@@ -12,7 +12,7 @@
 				<%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport'}%>
 				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
 				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
-					<span id="span1" class="fa fa-calendar"></span></div><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
+					<span id="span1" class="fa fa-calendar"></span><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
 					<% end %>
 				</div>
 			</div>
@@ -31,7 +31,9 @@
 				<div class="col-sm-6">
 					<div class="seance-card-title">
 						<%= seance.title %>
+
 					</div>
+					<%= seance.created_at.strftime("Annonce publiée le : %d/%m/%Y") %>
 					<div class="seance-card-description">
 						<%= seance.description %>
 					</div>
@@ -40,6 +42,9 @@
 					<div class="seance-card-description">
 						<p><%= seance.start_at.strftime("rdv le : %d/%m/%Y") %></p>
 						<p><%= seance.address %></p>
+						<% if seance.user != nil %>
+						<p><%= seance.user.first_name %> <%= seance.user.last_name[0].capitalize %>. </p>
+						<% end %>
 					</div>
 				</div>
 			</div>
