@@ -5,6 +5,8 @@ class Seance < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  searchkick
+
   # include PgSearch
   # pg_search_scope :search_by_title, :against => :title
 

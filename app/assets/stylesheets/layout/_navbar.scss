@@ -132,3 +132,14 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+/* Profil if user is sign in */
+.profil-name-black {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+  color: #3A3A3A; 
+  &:hover {
+    color: #3E75C6;
+  }
+}

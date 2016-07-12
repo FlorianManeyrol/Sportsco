@@ -10,10 +10,13 @@
   border-radius: 0px;
   position: absolute;
   width: 100%;
+  top:70px;
 }
 .alert-info {
-  background: $green;
+  background: rgba(50, 183, 150, 0.5);
 }
 .alert-warning {
   background: $red;
 }
+
+

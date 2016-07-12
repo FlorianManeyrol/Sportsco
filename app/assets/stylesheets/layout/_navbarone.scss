@@ -24,3 +24,25 @@
   }
 }
 
+/* Profil if user is sign in */
+
+
+.profil-picture {
+	display: inline-block;
+}
+
+.profil-name {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+  color: white; 
+  &:hover {
+    color: #F3F3F3;
+  }
+}
+
+.avatar img {
+	height: 30px;
+	border-radius: 50%;
+}
+

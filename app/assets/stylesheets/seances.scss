@@ -22,3 +22,94 @@
 	}
 
 }
+
+/* Seance new */
+
+.seance-form {
+  &-container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+  }
+  h3 {
+  	font-size: 32px;
+    color: #484848;
+    font-weight: bold;
+  }
+  p {
+		padding-bottom:40px;
+  }
+  .form-group {
+	margin-bottom: 40px;
+  }
+  label {
+	font-weight: normal;
+  color: #484848;
+  font-size: 22px;
+	}
+	.input-group {
+	width:100%;
+  }
+  .fa-calendar {
+  	position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 3;
+  }
+  .fa-map-marker {
+  	position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 3;
+  }
+
+  .step6 {
+  	position:relative;
+  }
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+/* Seance show */
+
+.seance-description {
+	background-color: #F5F5F5;
+	font-family: Roboto;
+	&-container {
+		max-width: 1045px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	&-title {
+		color: #484848;
+		h3 {
+		  font-weight:bold;
+	  }
+	}
+	h4 {
+	  color: #757575;
+	  font-size: 15px;
+	  margin-top:0px;
+	}
+}
+
+
+.about-author {
+	background-color: white;
+	padding:20px;
+	border: 1px solid #DCE0E0;
+	color: #484848;
+	&-title {
+		h3 {
+		  font-weight:bold;
+		}
+	}
+
+}
+
+
+
+
+
