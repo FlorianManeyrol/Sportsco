@@ -65,40 +65,48 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-			  <div class="about-author">
-			    <div class="about-author-title">
-			    	<h3>A Propos de <strong><%= @seance.user.first_name %> <%= @seance.user.last_name[0].capitalize %></strong></h3>
-			    </div>
-			    <hr>
-			    <%= @seance.user.birth %> ans
-			    <hr>
-			    <%= @seance.user.sex %>
-			    <hr>
-			    <div class="avatar-grey">
-			    <%= cl_image_tag @seance.user.picture, :height => 50, :width => 50, :crop => :fill  %>
-			    </div>
-			    <hr>
-			    Sport(s) favoris :
-			    <hr>
-          niveau :
-			    <hr>
-			    inscrit depuis : 
-			    <%= @seance.user.created_at.strftime("%d/%m/%Y") %>
-			    <hr>
-			    <div class="btn btn-default btn-block">
-			    	Entrer en contact
-			    </div>
-			  </div>
+				<div class="about-author">
+					<div class="about-author-title text-center">
+						<h3>A Propos de </h3>
+						<div class="about-author-author">
+							<%= @seance.user.first_name %> <%= @seance.user.last_name[0].capitalize %>.
+						</div>
+						<div class="about-author-picture">
+						  <% if @seance.user.picture.present? %>
+							  <%= cl_image_tag @seance.user.picture, :height => 50, :width => 50,  :crop => :fill %>
+							<% else %>
+                <%= image_tag 'default-avatar.svg', :height => 50, :width => 50,  :crop => :fill  %>
+							<% end %>
+						</div>
+					</div>
+					<hr>
+					Age : <%= @seance.user.birth %> ans
+					<hr>
+					Sexe : <%= @seance.user.sex %>
+					<hr>
+					Sport(s) favoris :
+					<hr>
+					niveau :
+					<hr>
+					inscrit depuis : 
+					<%= @seance.user.created_at.strftime("%d/%m/%Y") %>
+				</div>
+				<div class="btn-contact">
+					<div class="btn btn-default btn-block">
+						Entrer en contact
+					</div>
+				</div>
+
 			</div>
+
 		</div>
 
 
-<!-- 		<h3><%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
+<!--        <%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
 			<%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,
-			data: { confirm: "Are you sure?" }  %>
-		</h3> -->
+			data: { confirm: "Are you sure?" }  %> -->
+		</div>
 	</div>
-</div>
 
 
 

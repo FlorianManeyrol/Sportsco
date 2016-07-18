@@ -1,25 +1,39 @@
-<div class="bg-grey">
-	<div class="container">
-		<%= simple_form_for :random_search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
-		<%= f.input :random, class: "form-control" %>
-		<%= f.submit "search" %>
-		<% end %>
-	</div>
-	<div class="searchbar">
+<div class="seances-searchforms">
+	<div class="seances-searchforms-container">
 		<div class="row">
-			<div class="searchbar-content">
-				<%= simple_form_for :search, :html => { :class => 'form-inline form' }, url: seances_path, method: :get do |f| %>
-				<%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport'}%>
-				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
-				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
-					<span id="span1" class="fa fa-calendar"></span><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
-					<% end %>
-				</div>
+			<div class="col-md-6">
+				<%= simple_form_for :random_search, :html => { :class => 'form' }, url: seances_path, method: :get do |f| %>
+				<%= f.input :random, class: "form-control", label: false, placeholder: 'Que recherchez-vous ?',  input_html: { class: 'search-date-rounded', :size => 65 }%>
+				<%= f.submit "search", class:'hidden' %>
+				<% end %>
 			</div>
 		</div>
-	</div>
+		<div class="row">
+		<%= simple_form_for :search, :html => { :class => 'form' }, url: seances_path, method: :get do |f| %>
+			<div class="col-md-4">
+				<%= f.input :sport, collection: @sports, prompt: 'Quel sport souhaitez-vous pratiquer?', label: false, wrapper_html: { class: "searchbar-select" }, input_html: { class: 'search-sport-rounded'}%>
+			</div>
+			<div class="col-md-3">
+				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement-rounded', value: @address, :size => 25 }, label: false %>
+			</div>
+			<div class="col-md-3">
+			  <div class="date" id='datetimepicker'>
+				<%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date-rounded' }%>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<%= f.submit "Rechercher", class: 'btn btn-blue btn-search-rounded btn-block' %>
+			</div>
+    <% end %>
+    </div>	
+  </div>		
+</div>
 
+<div class="seances-result">
 	<div class="container">
+<!-- 	  <div class="seances-result-title">
+	  	<h1> Seances de sports partout en France</h1>
+	  </div> -->
 		<% if @seances.size > 0 %>
 		<% @seances.each do |seance| %>
 		<%= link_to seance do %>
@@ -31,7 +45,6 @@
 				<div class="col-sm-6">
 					<div class="seance-card-title">
 						<%= seance.title %>
-
 					</div>
 					<%= seance.created_at.strftime("Annonce publiée le : %d/%m/%Y") %>
 					<div class="seance-card-description">
@@ -56,3 +69,4 @@
 		<% end %>
 	</div>
 </div>
+
