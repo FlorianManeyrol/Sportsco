@@ -11,8 +11,8 @@
 
       <!-- Login text link -->
       <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one btn-cta-white" %>
-<!--       <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
- -->      
+      <%= link_to "Recherche des partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
+      
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
 
@@ -22,7 +22,8 @@
         <div class="dropdown">
           <div class="dropdown-toggle" data-toggle="dropdown">
           	<div class="profil-name">
-      				<%= current_user.first_name.capitalize %>
+      				<%= current_user.first_name.capitalize %> <i class="fa fa-angle-down" aria-hidden="true"></i>
+
      				</div>
      				<div class="profil-picture avatar">
      				<% if current_user.picture.present? %>
@@ -39,7 +40,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to users_seances_path do %>
                 <i class="fa fa-home"></i> Mes annonces
               <% end %>
             </li>
@@ -56,8 +57,7 @@
 
       <!-- Login text link -->
       <%= link_to "Propose une séance", new_seance_path, class: "navbar-wagon-item navbar-wagon-link-one btn-cta-white" %>
-<!--       <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>
- -->      
+      <%= link_to "Recherche des	 partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link-one" %>  
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link-one" %>
 

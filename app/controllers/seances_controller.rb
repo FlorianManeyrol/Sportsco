@@ -3,7 +3,7 @@ class SeancesController < ApplicationController
 	before_action :set_seance, only: [:show, :edit, :update, :destroy]
 
 	def index
-	  @seances = Seance.all
+	  @seances = policy_scope(Seance)
 	  @sports = Sport.all
 
 		if params[:search]
@@ -28,12 +28,18 @@ class SeancesController < ApplicationController
 		end
 	end
 
+	def index_user
+		@seances = Seance.where(user: current_user)
+		authorize @seances
+	end
+
 	def show
 	end
 
 	def create
 		@seance = Seance.new(seance_params)
 		@seance.user = current_user
+		authorize @seance
 		if @seance.save
 			redirect_to @seance
 		else
@@ -44,6 +50,7 @@ class SeancesController < ApplicationController
 	def new
     # @sports = Sport.all.map{ |u| [ u.name, u.id ] }
     @seance = Seance.new
+    authorize @seance
     @regions = Seance::REGIONS
     @departements = Seance::DEPARTEMENTS
   end
@@ -72,6 +79,7 @@ class SeancesController < ApplicationController
 
   def set_seance
   	@seance = Seance.find(params[:id])
+  	authorize @seance
   end
 
 end

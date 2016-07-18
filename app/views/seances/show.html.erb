@@ -67,7 +67,7 @@
 			<div class="col-md-4">
 				<div class="about-author">
 					<div class="about-author-title text-center">
-						<h3>A Propos de </h3>
+						<h3>A propos de </h3>
 						<div class="about-author-author">
 							<%= @seance.user.first_name %> <%= @seance.user.last_name[0].capitalize %>.
 						</div>
@@ -100,11 +100,13 @@
 			</div>
 
 		</div>
-
-
-<!--        <%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
-			<%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,
-			data: { confirm: "Are you sure?" }  %> -->
+    <% if policy(@seance).edit? %>
+      <%= link_to "Editer l'annonces", edit_seance_path(@seance), class: 'btn btn-default' %>
+    <% end %>
+    <% if policy(@seance).destroy? %>
+			<%= link_to "Supprimer l'annonce", seance_path(@seance), class: 'btn btn-default' ,  method: :delete,
+			data: { confirm: "Are you sure?" }  %>
+		<% end %>
 		</div>
 	</div>
 
