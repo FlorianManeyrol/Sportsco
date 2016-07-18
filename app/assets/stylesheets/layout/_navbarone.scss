@@ -42,7 +42,12 @@
 }
 
 .avatar img {
-	height: 30px;
 	border-radius: 50%;
+	border: 2px solid white;
+}
+
+.avatar-grey img {
+	border-radius: 50%;
+	border: 2px solid #DCE0E0;
 }
 

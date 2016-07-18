@@ -18,6 +18,8 @@
     <%= f.input :birth, placeholder: 'Age', input_html: { min: '1', max: '120' }%>
 	
 	<%= f.input :sex, as: :radio_buttons, collection: [ "Homme", "Femme"], item_wrapper_class: 'inline' %>
+	<%= f.input :picture %>
+  <%= f.input :picture_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
