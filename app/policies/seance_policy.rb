@@ -6,7 +6,7 @@ class SeancePolicy < ApplicationPolicy
   end
 
   def index_user?
-  	user_is_owner_or_admin?
+  	true
   end
 
   def show?

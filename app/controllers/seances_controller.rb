@@ -29,7 +29,8 @@ class SeancesController < ApplicationController
 	end
 
 	def index_user
-
+		@seances = Seance.where(user: current_user)
+		authorize @seances
 	end
 
 	def show

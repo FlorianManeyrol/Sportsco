@@ -12,7 +12,7 @@
 
       <!-- Login text link -->
       <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link btn-cta-black" %>
-<!--       <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
+      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
@@ -23,7 +23,7 @@
         <div class="dropdown">
           <div class="dropdown-toggle" data-toggle="dropdown">
           	<div class="profil-name-black">
-      				<%= current_user.first_name.capitalize %>
+      				<%= current_user.first_name.capitalize %> <i class="fa fa-angle-down" aria-hidden="true"></i>
      				</div>
      				<div class="profil-picture avatar">
      				<% if current_user.picture.present? %>
@@ -56,8 +56,9 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to "Recherche de partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Propose ton sport", new_seance_path, class: "navbar-wagon-item navbar-wagon-link btn-cta-black" %>
+      <%= link_to "Recherche des partenaires", seances_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "Comment ça marche?", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
