@@ -100,11 +100,13 @@
 			</div>
 
 		</div>
-
-
-<!--        <%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
+    <% if policy(@seance).edit? %>
+      <%= link_to "Editer l'annonces", edit_seance_path(@seance)%>
+    <% end %>
+    <% if policy(@seance).destroy? %>
 			<%= link_to "Supprimer l'annonce", seance_path(@seance),  method: :delete,
-			data: { confirm: "Are you sure?" }  %> -->
+			data: { confirm: "Are you sure?" }  %>
+		<% end %>
 		</div>
 	</div>
 
