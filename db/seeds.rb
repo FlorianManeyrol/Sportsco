@@ -43,11 +43,11 @@ sports = [
 ]
 
 seances = [
-	{title: "Seance de footing", description: "Seance de footing à Montussan ce soir à 18h", sport_id: 2, user_id: 1, address: "10 route de merigot", start_at: DateTime.strptime("07/30/2016 17:00", "%m/%d/%Y %H:%M") },
-	{title: "Seance de football", description: "Seance de football à Montussan ce soir à 19h", sport_id: 1, user_id: 1, address: "10 route de merigot", start_at: DateTime.strptime("07/25/2016 17:00", "%m/%d/%Y %H:%M") },
-	{title: "Seance de velo", description: "Seance de velo à Montussan ce soir à 20h", sport_id: 4, user_id: 1, address: "Paris", start_at: DateTime.strptime("07/22/2016 17:00", "%m/%d/%Y %H:%M")},
-	{title: "Seance de judo", description: "Seance de judo à Montussan ce soir à 21h", sport_id: 6, user_id: 2, address: "Bordeaux", start_at: DateTime.strptime("08/07/2016 17:00", "%m/%d/%Y %H:%M")},
-	{title: "Seance de tennis", description: "Seance de tennis à Montussan ce soir à 22h", sport_id: 3, user_id: 2, address: "Aquitaine", start_at: DateTime.strptime("09/20/2016 17:00", "%m/%d/%Y %H:%M")},
+	{title: "Seance de footing", description: "Seance de footing à Montussan ce soir à 18h", sport_id: 2, user_id: 1, address: "10 route de merigot", start_at: DateTime.strptime("07/30/2016 17:00", "%m/%d/%Y %H:%M"), number_of_people: 2 },
+	{title: "Seance de football", description: "Seance de football à Montussan ce soir à 19h", sport_id: 1, user_id: 1, address: "10 route de merigot", start_at: DateTime.strptime("07/25/2016 17:00", "%m/%d/%Y %H:%M"), number_of_people: 4 },
+	{title: "Seance de velo", description: "Seance de velo à Montussan ce soir à 20h", sport_id: 4, user_id: 1, address: "Paris", start_at: DateTime.strptime("07/22/2016 17:00", "%m/%d/%Y %H:%M"), number_of_people: 3},
+	{title: "Seance de judo", description: "Seance de judo à Montussan ce soir à 21h", sport_id: 6, user_id: 2, address: "Bordeaux", start_at: DateTime.strptime("08/07/2016 17:00", "%m/%d/%Y %H:%M"), number_of_people: 2},
+	{title: "Seance de tennis", description: "Seance de tennis à Montussan ce soir à 22h", sport_id: 3, user_id: 2, address: "Aquitaine", start_at: DateTime.strptime("09/20/2016 17:00", "%m/%d/%Y %H:%M"), number_of_people: 2},
 ]
 
 users.each do |user|

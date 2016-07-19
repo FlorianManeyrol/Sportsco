@@ -41,6 +41,7 @@ class SeancesController < ApplicationController
 		@seance.user = current_user
 		authorize @seance
 		if @seance.save
+			SeanceMailer.creation_confirmation(@seance).deliver_now
 			redirect_to @seance
 		else
 			render :new
@@ -74,7 +75,7 @@ class SeancesController < ApplicationController
   private
 
   def seance_params
-  	params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement, :sport_id, :address, :validated_at)
+  	params.require(:seance).permit(:title, :description, :number_of_people, :start_at, :created_at, :girl_only, :region, :departement, :sport_id, :address, :validated_at, :val)
   end
 
   def set_seance

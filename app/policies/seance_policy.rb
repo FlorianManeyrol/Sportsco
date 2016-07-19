@@ -1,7 +1,7 @@
 class SeancePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all #where published_at ...
+      scope.where("start_at >= ? and val = ?", DateTime.now, true).order(start_at: :DESC)
     end
   end
 
