@@ -18,3 +18,10 @@ fr:
               taken: "Cette adresse e-mail est déja utilisée"
             sex:
               blank: "Précisez votre sexe pour continuer."
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: pm

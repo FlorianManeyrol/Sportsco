@@ -15,6 +15,8 @@ gem 'geocoder'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'searchkick'
+gem 'activeadmin', github: 'activeadmin'
+
 
 gem 'sass-rails'
 gem 'jquery-rails'
