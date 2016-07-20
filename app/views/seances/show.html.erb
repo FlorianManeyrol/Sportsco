@@ -92,9 +92,7 @@
 					<%= @seance.user.created_at.strftime("%d/%m/%Y") %>
 				</div>
 				<div class="btn-contact">
-					<button type="button" id="btn-show" class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal">
-            Entrer en contact
-          </button>
+					<%= link_to "Entrer en contact", new_seance_message_path(@seance), class: 'btn btn-default btn-block' %>
 				</div>
 				 
 
@@ -112,18 +110,7 @@
 	</div>
 
 
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <p class="modal-title" id="myModalLabel">Avant de continuer, merci de renseigner les informations suivantes :</p>
-      </div>
-      <div class="modal-body">
-
-      </div>
-    </div>
-  </div>
+	
 </div>
 
 

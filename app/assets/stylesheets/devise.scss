@@ -34,3 +34,18 @@
 .help-block {
 	font-size:14px;
 }
+
+// edit profil 
+
+.edit-profil {
+	background-color: #F5F5F5;
+	&-container {
+		max-width: 1045px;
+		margin: 0 auto; 
+		padding: 20px;
+	}
+	h2 {
+		color:#484848;
+		font-size:30px;
+	}
+}

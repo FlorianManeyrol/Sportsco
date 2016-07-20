@@ -1,0 +1,7 @@
+
+
+  <%= simple_form_for([@seance, @message]) do |f| %>
+
+  <%= f.input :content, label: false, placeholder: "Ecrivez votre message", error: 'Merci de compléter votre message', as: :text, input_html: { class: 'message-to-send'} %>
+  <%= f.submit "Envoyer le message", class: "btn btn-primary btn-xs" %>
+  <% end %>

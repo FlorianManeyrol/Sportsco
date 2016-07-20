@@ -2,6 +2,7 @@ class Seance < ActiveRecord::Base
   belongs_to :user
   belongs_to :sport
   #belongs_to :book
+  has_many :messages, dependent: :destroy
   
   after_update :send_validation_email, if: :val 
 

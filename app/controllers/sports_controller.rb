@@ -1,5 +1,5 @@
 class SportsController < ApplicationController
 	def index
-		@sports = Sport.all
+		@sports = policy_scope(Sport)
 	end
 end

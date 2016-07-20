@@ -1,0 +1,33 @@
+Searching 125 files for "btn-search"
+
+/Users/florianmaneyrol/code/florianmaneyrol/Sportsco/app/assets/stylesheets/seances.scss:
+  177  }
+  178  
+  179: .btn-search-rounded {
+  180  	height: 44px;
+  181  	border-radius: 3px 3px 3px 3px;
+
+/Users/florianmaneyrol/code/florianmaneyrol/Sportsco/app/views/pages/home.html.erb:
+   18  				<%= f.input :address, placeholder: 'Où?', input_html: { class: 'search-departement', value: @address, :size => 25 }, label: false %>
+   19  				<div class="input-group date" id='datetimepicker'><%= f.input :start_at, label: false, as: :string, placeholder: 'Quand?', input_html: { class: 'search-date' }%>
+   20: 				<span id="span1" class="fa fa-calendar"></span></div><%= f.submit "Rechercher", class: 'btn btn-blue btn-search' %>
+   21  				<% end %>
+   22  				</div>
+
+/Users/florianmaneyrol/code/florianmaneyrol/Sportsco/app/views/seances/index.html.erb:
+   23  			</div>
+   24  			<div class="col-md-2">
+   25: 				<%= f.submit "Rechercher", class: 'btn btn-blue btn-search-rounded btn-block' %>
+   26  			</div>
+   27      <% end %>
+
+3 matches across 3 files
+
+
+Searching 157 files for "search-form"
+
+0 matches
+
+Searching 157 files for "seance_search"
+
+0 matches

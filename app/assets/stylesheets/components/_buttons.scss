@@ -1,5 +1,17 @@
+.btn-blue-bottom {
+	background-color: #3E75C6;
+  border-color: #3E75C6;
+  border-bottom-color: #1F4E93;
+	color: white;
+	&:hover, &:focus {
+		color:white;
+		background-color: rgba(#3E75C6, 0.8);
+		border-color: rgba(#3E75C6, 0.8)
+  }
+}
+
 .btn-blue {
-	background-color:#3E75C6;
+	background-color: #3E75C6;
 	color: white;
 }
 

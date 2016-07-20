@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :seances, dependent: :destroy
   has_many :sports, :through => :seances
   #has_many :books, :through => seances
+  has_many :messages, dependent: :destroy
   
   #validates user
 	validates :first_name, presence: true

@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 	skip_after_action :verify_authorized
 
 	def home
-		@sports = Sport.all
+		@sports = policy_scope(Sport)
 	end
 end

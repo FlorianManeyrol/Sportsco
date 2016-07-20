@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :seances do 
+  	resources :messages, only: [:new, :create]
   	collection do
   		get 'search'
   	end

@@ -4,7 +4,7 @@ class SeancesController < ApplicationController
 
 	def index
 	  @seances = policy_scope(Seance)
-	  @sports = Sport.all
+	  @sports = policy_scope(Sport)
 
 		if params[:search]
 
