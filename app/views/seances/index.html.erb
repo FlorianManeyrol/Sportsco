@@ -53,10 +53,11 @@
 				</div>
 				<div class="col-sm-3">
 					<div class="seance-card-description">
-						<p><%= seance.start_at.strftime("rdv le : %d/%m/%Y") %></p>
-						<p><%= seance.address %></p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> <%= seance.start_at.strftime("rdv le : %d/%m/%Y") %></p>
+						<p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= seance.address %></p>
 						<% if seance.user != nil %>
-						<p><%= seance.user.first_name %> <%= seance.user.last_name[0].capitalize %>. </p>
+						<p><i class="fa fa-user" aria-hidden="true"></i> <%= seance.user.first_name %> <%= seance.user.last_name[0].capitalize %>. </p>
+						  
 						<% end %>
 					</div>
 				</div>

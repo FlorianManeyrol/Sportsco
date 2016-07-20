@@ -3,10 +3,12 @@
   border-color: #3E75C6;
   border-bottom-color: #1F4E93;
 	color: white;
+	height: 44px;
+	padding:11px;
 	&:hover, &:focus {
 		color:white;
-		background-color: rgba(#3E75C6, 0.8);
-		border-color: rgba(#3E75C6, 0.8)
+		background-color: rgba(#3E75C6, 0.9);
+		border-color: rgba(#3E75C6, 0.9)
   }
 }
 

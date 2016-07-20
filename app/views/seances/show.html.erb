@@ -90,9 +90,11 @@
 					<hr>
 					inscrit depuis : 
 					<%= @seance.user.created_at.strftime("%d/%m/%Y") %>
+					<hr>
+					<%= link_to "Entrer en contact", new_seance_message_path(@seance), class: 'btn btn-blue-bottom btn-block' %>
 				</div>
 				<div class="btn-contact">
-					<%= link_to "Entrer en contact", new_seance_message_path(@seance), class: 'btn btn-default btn-block' %>
+					
 				</div>
 				 
 
