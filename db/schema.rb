@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719131034) do
+ActiveRecord::Schema.define(version: 20160719150835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160719131034) do
   create_table "seances", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",       null: false
+    t.datetime "created_at",                       null: false
     t.string   "region"
     t.string   "departement"
     t.string   "city"
@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20160719131034) do
     t.boolean  "girl_only"
     t.datetime "start_at"
     t.integer  "user_id"
-    t.datetime "updated_at",       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "sport_id"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "validated_at"
+    t.boolean  "val",              default: false
   end
 
   add_index "seances", ["sport_id"], name: "index_seances_on_sport_id", using: :btree

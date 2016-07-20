@@ -4,7 +4,7 @@ ActiveAdmin.register Seance do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :description, :number_of_people, :girl_only, :start_at, :user_id, :sport_id, :address, :validated_at
+  permit_params :title, :description, :number_of_people, :girl_only, :start_at, :user_id, :sport_id, :address, :val
 
 	index do
 		selectable_column
@@ -17,8 +17,10 @@ ActiveAdmin.register Seance do
 		end
 
 		column :address
-	  # column :validated_at
+	  column :val
+
 	  actions
+
 	end
 #
 # or

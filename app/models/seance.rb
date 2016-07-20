@@ -1,10 +1,13 @@
 class Seance < ActiveRecord::Base
   belongs_to :user
   belongs_to :sport
+  #belongs_to :book
+  
+  after_update :send_validation_email, if: :val 
 
   #geocoder
   geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  after_validation :geocode
   
   #searchkick
   searchkick
@@ -46,5 +49,10 @@ class Seance < ActiveRecord::Base
     "Pays de la Loire"         								=> "Pays de la Loire",
     "Provence-Alpes-Côte d'Azur"         			=> "Provence-Alpes-Côte d'Azur",
   }
+  private
+  
+  def send_validation_email
+  	SeanceMailer.validation(self).deliver
+  end 
 
 end
